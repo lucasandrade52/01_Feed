@@ -16,14 +16,14 @@ interface Content {
   content: string;
 }
 
-interface PostProps {
+export interface PostProps {
   author: Author;
   publishedAt: Date;
   content: Content[];
 }
 
 export default function Post({ author, publishedAt, content }: PostProps) {
-  const [comments, setComments] = useState(["Post muito bom, excelsior!"]);
+  const [comments, setComments] = useState([]);
   const [newCommentText, setNewCommentText] = useState("");
 
   const publishedDateFormatted = format(

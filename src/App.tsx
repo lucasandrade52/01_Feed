@@ -1,11 +1,15 @@
 import Header from "./components/Headers";
 import Sidebar from "./components/Sidebar";
-import Post from "./components/Post";
+import Post, { PostProps } from "./components/Post";
 
 import "./global.css";
 import styles from "./App.module.css";
 
-const posts = [
+interface Post extends PostProps {
+  id: number;
+}
+
+const posts: Post[] = [
   {
     id: 1,
     author: {
@@ -14,7 +18,7 @@ const posts = [
       role: "Web Developer",
     },
     content: [
-      { type: "paragraph", content: "Fala galeraa 👋" },
+      { type: "paragraph", content: "Fala galera 👋" },
       {
         type: "paragraph",
         content:
